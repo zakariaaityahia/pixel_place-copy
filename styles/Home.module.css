@@ -1,3 +1,6 @@
+* {
+  font-family: 'Fira Code', monospace, sans-serif;  
+}
 .container {
   padding: 0 2rem;
 }

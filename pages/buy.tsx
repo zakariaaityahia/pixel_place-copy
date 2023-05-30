@@ -11,7 +11,7 @@ export default function Buy() {
     return (
         <Container maxW={"1200px"} p={5}>
             <Heading>Buy NFTs</Heading>
-            <Text>Browse and buy NFTs from this collection.</Text>
+            <Text>Browse and buy NFTs from our pixel place collection.</Text>
             <NFTGrid 
                 isLoading={isLoading} 
                 data={data} 

@@ -9,7 +9,7 @@ import { Box, Input, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from
 type Props = {
   nft: NFTType;
 };
-
+// sell NFTs - data to submit listing 
 type DirectFormData = {
   nftContractAddress: string;
   tokenId: string;
@@ -36,6 +36,7 @@ export default function SaleInfo({ nft }: Props) {
 
   const { mutateAsync: createDirectListing } = useCreateDirectListing(marketplace);
 
+    // check approval that the wallet will let the market place can list the NFT (the marketplace will reduct listing gas fees)
   async function checkAndProvideApproval() {
       const hasApproval = await nftCollection?.call(
           "isApprovedForAll",
@@ -58,6 +59,7 @@ export default function SaleInfo({ nft }: Props) {
       return true;
   }
 
+    
   const { register: registerDirect, handleSubmit: handleSubmitDirect } = useForm<DirectFormData>({
       defaultValues: {
           nftContractAddress: NFT_COLLECTION_ADDRESS,
@@ -97,6 +99,7 @@ export default function SaleInfo({ nft }: Props) {
     },
   });
 
+ 
   async function handleSubmissionAuction(data: AuctionFormData) {
       await checkAndProvideApproval();
       const txResult = await createAuctionListing({

@@ -9,7 +9,7 @@ const Navbar = () => {
     <Box maxW={"1200px"} m={"auto"} py={"10px"} px={"40px"}>
     <Flex justifyContent={"space-between"} alignItems={"center"}>
         <Link as={NextLink} href="">
-          <Heading>PixelPlace</Heading>
+          <Heading>Pixel Place</Heading>
         </Link>
        <Flex direction={"row"}>
           <Link as={NextLink} href="/buy" mx={2.5}>

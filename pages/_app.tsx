@@ -13,7 +13,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThirdwebProvider activeChain={activeChain}>
       <ChakraProvider>
         <Navbar></Navbar>
-        <Component {...pageProps} />
+        <Component {...pageProps} sdkOptions={{
+                gatewayUrls: [
+                    "https://ipfs-2.thirdwebcdn.com/ipfs"
+                ],
+            }} />
         </ChakraProvider>
     </ThirdwebProvider>
   );

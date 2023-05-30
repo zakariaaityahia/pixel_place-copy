@@ -18,7 +18,7 @@ export default function NFTComponent({ nft }: Props) {
           tokenId: nft.metadata.id,
       });
   
-  //Add for auciton section
+  //auciton section
   const { data: auctionListing, isLoading: loadingAuction} = 
   useValidEnglishAuctions(marketplace, {
       tokenContract: NFT_COLLECTION_ADDRESS,
